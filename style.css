@@ -1,0 +1,119 @@
+/** Student interface - style.css */
+
+body {
+    font-family: "Verdana";
+    font-size: 13px;
+    margin: auto;
+    color: rgb(109, 109, 109);
+    cursor: default;
+}
+/* The top header */
+#top {
+    margin: 0 10px;
+    padding-bottom: 12px;
+    width: 98%;
+    height: 30px;
+    font-size: 14px;
+}
+/* The nav bars */
+.navbar {
+    width: 100%;
+    overflow: hidden;
+    padding: 3px;
+    color: rgb(82, 82, 82);
+}
+.navbar a {
+    float: left;
+    padding: 12px 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.nav_item {
+    transition: color 0.3s;
+}
+.nav_item:hover {
+    color:#72C493;
+}
+.active {
+    font-weight: bold;
+}
+/* The divider bar */
+#divider {
+  height: 1.5px;
+  background-color: rgb(179, 179, 179);
+}
+/* The courses nav bar */
+#courses {
+    background-color: rgb(238, 238, 238);
+    padding: 0;
+    height: 45px;
+    font-size: 14px;
+    z-index: 10;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+/* The buttons */
+.button {
+    border: 2px solid #72C493;
+    border-radius: 5px;
+    padding: 6px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn_filled {
+    background-color: #72C493;
+    color: white;
+}
+.btn_border {
+    background-color: transparent;
+    color: rgb(88, 88, 88);
+}
+.btn_filled:hover {
+    transition-duration: 0.3s;
+    transform: scale(.97);
+}
+.btn_border:hover {
+    transition-duration: 0.3s;
+    transform: scale(.98);
+    background-color: #72C493;
+    color: white;
+}
+.btn_course_menu {
+    width: 30px;
+    margin: -5px 12px 0 0;
+}
+
+/* The page body & sections */
+#page_body {
+    height: 84%;
+    width: 100%;
+    display: table;
+}
+.column {
+    float: left;
+    height: 100%;
+}
+.services {
+    border-right: 1px solid rgb(179, 179, 179);
+    width: 4%;
+}
+.display {
+    background-color: palevioletred;
+    width: 95%;
+}
+/* The services nav bar */
+.service_item {
+    width: 25px;
+    padding: 15 12px;
+    border-bottom: 0.5px solid rgb(179, 179, 179);
+}
+.service_item:hover{
+    transition-duration: 0.3s;
+    filter: brightness(0) invert(1);
+}
+.service_item_bkg:hover {
+    transition-duration: 0.3s;
+    background-color: #72C493;
+}
