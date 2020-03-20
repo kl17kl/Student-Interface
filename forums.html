@@ -6,10 +6,11 @@
 
 <html>
     <head>
-      <title>ELEARNER</title>
+      <title>ELearner: COSC 3P94 Forums</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="style.css">
+      <script type="text/javascript" src="scripts.js"></script>
     </head>
     <body>
       <!-- The top header -->
@@ -35,18 +36,152 @@
       <div id="page_body">
         <!-- The services nav bar -->
         <div class="services column"> 
-            <div class="service_item_bkg"><a href="#"><img src="img/about.png" class="service_item" alt="about"/></a></div>
-            <div class="service_item_bkg"><a href="#"><img src="img/announcements.png" class="service_item" alt="announcements"/></a></div>
-            <div class="service_item_bkg"><a href="#"><img src="img/resources.png" class="service_item" alt="resources"/></a></div>
-            <div class="service_item_bkg"><a href="#"><img src="img/to-do.png" class="service_item" alt="to-do"/></a></div>
-            <div class="service_item_bkg"><a href="#"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a></div>
-            <div class="service_item_bkg"><a href="#"><img src="img/forums.png" class="service_item" alt="forums"/></a></div>
+          <div class="service_item_bkg"><a href="#"><img src="img/about.png" class="service_item" alt="about"/></a></div>
+          <div class="service_item_bkg"><a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a></div>
+          <div class="service_item_bkg"><a href="#"><img src="img/resources.png" class="service_item" alt="resources"/></a></div>
+          <div class="service_item_bkg"><a href="#"><img src="img/to-do.png" class="service_item" alt="to-do"/></a></div>
+          <div class="service_item_bkg"><a href="#"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a></div>
+          <div class="service_item_bkg"><a href="#"><img src="img/forums.png" class="service_item" alt="forums"/></a></div>
         </div>
         <!-- The main display -->
         <div class="display column">
+          <div class="forum_left column">
+            <div id="threadbox1" class="forum_item" style="background-color: #D5F5CD" onclick="displayHidden('thread1')">
+              <div class="column">
+                <img src="img/bockus.png" class="profile" alt="user"/>
+              </div>
+              <div class="column">
+                <p class="forum_header">Group Member Match-ups</p>
+                <p class="forum_subheader">Posted by Dave Bockus on Feb. 11 @11:30am</p>
+                <div class="column"><img src="img/answers.png" class="forum_icons" style="padding-left:15px"/><span style="font-size: 11px;">5</span></div>
+                <div class="column"><img src="img/upvote.png" class="forum_icons"/><span style="font-size: 11px;">24</span></div>
+                <div class="column"><img src="img/views.png" class="forum_icons"/><span style="font-size: 11px;">72</span></div>
+              </div>
+              <p style="font-size: 10px;  float: right; margin: -10px 30px 0 0;">Last comment 34 days ago</p>
+            </div>
+            <div id="threadbox2" class="forum_item" onclick="displayHidden('thread2')">
+              <div class="column">
+                <img src="img/bockus.png" class="profile" alt="user"/>
+              </div>
+              <div class="column">
+                <p class="forum_header">Seminar 1</p>
+                <p class="forum_subheader">Posted by Dave Bockus on Feb. 27 @2:45pm</p>
+                <div class="column"><img src="img/answers.png" class="forum_icons" style="padding-left:15px"/><span style="font-size: 11px;">11</span></div>
+                <div class="column"><img src="img/upvote.png" class="forum_icons"/><span style="font-size: 11px;">3</span></div>
+                <div class="column"><img src="img/views.png" class="forum_icons"/><span style="font-size: 11px;">26</span></div>
+              </div>
+              <p style="font-size: 10px;  float: right; margin: -10px 30px 0 0;">Last comment 21 days ago</p>
+            </div>
+          </div>
+          <!-- The forum expanded display -->
+          <div id="thread1" class="forum_right column" style="color: black; display: block;">
+            <div class="forum_thread">
+              <p class="forum_header" style="font-size: 18px">Group Member Match-ups</p>
+              <p class="forum_subheader">Posted by Dave Bockus on Feb. 11 @11:30am</p>
+              <p style="padding: 6px 15px">For this project, you'll need to get into group of 3-4 people. Try to mingle with both developers and designers. Having a 
+                more diverse group will increase your chances of success. You will need to form your groups by the end of this week, as we
+                will get started with stage one of the project at the end of next week. Use this thread to find your group mates - or don't.
+                If you cannot find a group by the end of this week, email me, and I will try to pair you up with a random group.
+              </p>
+              <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons" style="padding-left:15px"/><span class="forum_labels">11 Comments</span></div>
+              <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">4 Upvotes</span></div>
+              <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">19 Views</span></div>
+            </div>
+            <div class="forum_comment" style="width: 725px">
+              <div class="column">
+                <img src="img/profile1.png" class="profile" alt="user"/>
+              </div>
+              <div class="column">
+                <p class="forum_header" style="font-size: 16px">Looking for a group!</p>
+                <p class="forum_subheader">Commented by María del Carmen on Feb. 11 @11:52am</p>
+                <p style="padding: 0 0 4px 15px">Hello, I'm an IASC student looking for three other people to form a group!</p>
+                <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">2 Comments</span></div>
+                <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">2 Upvotes</span></div>
+                <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">14 Views</span></div>
+              </div>
+            </div>
+            <div class="forum_comment" style="margin-left: 50px; width: 704px">
+              <div class="column">
+                <img src="img/profile2.png" class="profile" alt="user"/>
+              </div>
+              <div class="column">
+                <p class="forum_header" style="font-size: 16px">Re: Looking for a group!</p>
+                <p class="forum_subheader">Commented by Cameron Martin on Feb. 11 @12:34pm</p>
+                <p style="padding: 0 0 4px 15px">Hey Maria, I'd like to join you. Just so you know, I'm a COSC student.</p>
+                <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">0 Comments</span></div>
+                <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
+                <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">9 Views</span></div>
+              </div>
+            </div>
+            <div class="forum_comment" style="margin-left: 50px; width: 704px">
+              <div class="column">
+                <img src="img/profile3.png" class="profile" alt="user"/>
+              </div>
+              <div class="column">
+                <p class="forum_header" style="font-size: 16px">Re: Looking for a group!</p>
+                <p class="forum_subheader">Commented by Nadia Ali on Feb. 12 @12:46</p>
+                <p style="padding: 0 0 4px 15px">Hi Maria and Cameron, I'm a COSC student and I would love to join you guys:)</p>
+                <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">0 Comments</span></div>
+                <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
+                <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">8 Views</span></div>
+              </div>
+            </div>
+          </div>
+            <!-- The 2nd selectable thread (initially hidden) -->
+            <div id="thread2" class="forum_right column" style="color: black; display: none;">
+              <div class="forum_thread" style="height: 115px">
+                <p class="forum_header" style="font-size: 18px">Seminar 1</p>
+                <p class="forum_subheader">Posted by Dave Bockus on Feb. 27 @2:45pm</p>
+                <p style="padding: 6px 15px">For your first seminar, you'll need to comment something below. This is an optional seminar.</p>
+                <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons" style="padding-left:15px"/><span class="forum_labels">3 Comments</span></div>
+                <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">3 Upvotes</span></div>
+                <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">9 Views</span></div>
+              </div>
+              <div class="forum_comment" style="width: 725px">
+                <div class="column">
+                  <img src="img/profile4.png" class="profile" alt="user"/>
+                </div>
+                <div class="column">
+                  <p class="forum_header" style="font-size: 16px">Seminar One - Free Marks?</p>
+                  <p class="forum_subheader">Commented by Jordan Patel on Feb. 27 @4:12pm</p>
+                  <p style="padding: 0 0 4px 15px">Since this is optional do we get bonus marks for submitting something?</p>
+                  <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">0 Comments</span></div>
+                  <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
+                  <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">8 Views</span></div>
+                </div>
+              </div>
+              <div class="forum_comment" style="margin-left: 50px; width: 704px">
+                <div class="column">
+                  <img src="img/bockus.png" class="profile" alt="user"/>
+                </div>
+                <div class="column">
+                  <p class="forum_header" style="font-size: 16px">Re: Seminar 1 submission</p>
+                  <p class="forum_subheader">Commented by Dave Bockus on Feb. 27 @5:55pm</p>
+                  <p style="padding: 0 0 4px 15px">No.</p>
+                  <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">0 Comments</span></div>
+                  <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
+                  <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">2 Views</span></div>
+                </div>
+              </div>
+              <div class="forum_comment" style="width: 725px">
+                <div class="column">
+                  <img src="img/profile5.png" class="profile" alt="user"/>
+                </div>
+                <div class="column">
+                  <p class="forum_header" style="font-size: 16px">Seminar 1 submission</p>
+                  <p class="forum_subheader">Commented by Joshua Reyes on Feb. 28 @7:29pm</p>
+                  <p style="padding: 0 0 4px 15px">Hi, my name is Josh Reyes. I'm a third year student in Comp-Sci.</p>
+                  <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">0 Comments</span></div>
+                  <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
+                  <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">3 Views</span></div>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
       <!-- The footer -->
-      <div id="footer"></div>
+      <div id="footer">
+        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Barral • COSC 3P94 • Stage 2
+      </div>
     </body>
 </html>
