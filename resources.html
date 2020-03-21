@@ -1,0 +1,130 @@
+<!--
+@resources page on the student interface.
+@date created 03/17/2020
+@author Wenjie Lin
+-->
+<html>
+
+<head>
+  <title>ELEARNER</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/resources.css">
+  <script type="text/javascript" src="scripts/main.js"></script>
+</head>
+
+<body>
+  <!-- The top header -->
+  <div id="top" class="navbar">
+    <a href="#"><img src="img/logo.png" alt="logo" style="margin-top: -5px; width: 100px;" /></a>
+    <div style="float: right">
+      <a class="nav_item">help</a>
+      <a class="nav_item">sign-out</a>
+      <a href="#"><img src="img/user.png" alt="user" style="margin-top: -5px; width: 30px; padding: 0;" /></a>
+    </div>
+  </div>
+  <!-- Nav bar divider -->
+  <div id="divider"></div>
+  <!-- The courses nav bar -->
+  <div id="courses" class="navbar">
+    <a href="#" style="margin: -5px 10px"><button class="button btn_border">HOME</button></a>
+    <a href="#"><button class="button btn_filled" style="margin: -5px -20px">COSC 3P94</button></a>
+    <div style="float: right">
+      <a href="#"><img src="img/courses.png" class="btn_course_menu" alt="menu" /></a>
+    </div>
+  </div>
+  <!-- The page body-->
+  <div id="page_body">
+    <!-- The services nav bar -->
+    <div class="services column"> 
+      <div class="service_item_bkg"><a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a></div>
+      <div class="service_item_bkg"><a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a></div>
+      <div class="service_item_bkg"><a href="#"><img src="img/resources.png" class="service_item" alt="resources"/></a></div>
+      <div class="service_item_bkg"><a href="#"><img src="img/to-do.png" class="service_item" alt="to-do"/></a></div>
+      <div class="service_item_bkg"><a href="#"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a></div>
+      <div class="service_item_bkg"><a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a></div>
+    </div>
+    <!-- The main display -->
+    <div class="display column">
+      <p class="page_title">Resources</p>        
+      <div class="forum_left column" style="width: 25%;">
+        <div id="resbox1" class="folder" style="margin-top: 20px; background-color: #D5F5CD" onclick="toggleDisplayRes('resbox1', 'res1')">
+          <div class="column">
+            <img src="img/folder.png" style="width: 17px; margin-top: -3px;"/>
+          </div>
+          <div class="column">
+            <p class="folder_name">Week 1</p>
+          </div>
+        </div>
+        <div id="resbox2" class="folder" onclick="toggleDisplayRes('resbox2', 'res2')">
+          <div class="column">
+            <img src="img/folder.png" style="width: 17px; margin-top: -3px;"/>
+          </div>
+          <div class="column">
+            <p class="folder_name">Week 2</p>
+          </div>
+        </div>
+        <div id="resbox3" class="folder" onclick="toggleDisplayRes('resbox3', 'res3')">
+          <div class="column">
+            <img src="img/folder.png" style="width: 17px; margin-top: -3px;"/>
+          </div>
+          <div class="column">
+            <p class="folder_name">Week 3</p>
+          </div>
+        </div>
+      <div id="resbox4" class="folder" onclick="toggleDisplayRes('resbox4', 'res4')">
+        <div class="column">
+          <img src="img/folder.png" style="width: 17px; margin-top: -3px;"/>
+        </div>
+        <div class="column">
+          <p class="folder_name">Week 4</p>
+        </div>
+      </div>
+    </div>
+      <!-- The forum expanded display -->
+      <div class="res_right column" style="display: block; height: 21px;">
+        <div class="label_header" style="border-left: none; width: 339px;">File name</div>
+        <div class="label_header" style="width: 175px;">Uploaded by</div>
+        <div class="label_header">Date modified</div>
+        <div class="label_header">File size</div>
+      </div>
+      <div id="res1" class="res_right column" style=" display: block;">
+        <div class="resource">
+          This is a resource item with file name, size, etc.
+        </div>
+        <div class="resource">
+          This is another resource item with file name, size, etc.
+        </div>
+        <div class="resource">
+          INCLUDE SOMETHING FOR SEMINAR 1 (I.E.on the cosc 3p94 page - seminar week 1)
+        </div>
+      </div>
+      <div id="res2" class="res_right column" style="display: none;">
+        <div class="resource">
+          This is a resource item for week two.
+        </div>
+        <div class="resource">
+          This is a seminar week 2 item.
+        </div>
+      </div>
+      <div id="res3" class="res_right column" style="display: none;">
+        <div class="resource">
+          This is a resource item FOR WEEK THREE.
+        </div>
+        <div class="resource">
+          Filler textttt bbbbbeeeeeeeee
+        </div>
+        <div class="resource">
+          include week slides for each week and seminars for each week
+        </div>
+      </div>
+      <div id="res4" class="res_right column" style="display: none;">
+        <div class="resource">
+          You know the deal. at least 1 lec slides thing and 1 seminar thing.
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
