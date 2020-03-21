@@ -1,0 +1,43 @@
+/* Resources Page Styles - resources.css */
+.res_right {
+    width: 68%;
+}
+.folder {
+    width: 65%;
+    height: 10px;
+    border: 1px solid rgb(72, 131, 86);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0 15px 30px;
+    cursor: pointer;
+}
+.folder:hover{
+    background-color: rgb(236, 236, 236);
+}
+.folder_name {
+    margin-top: -3px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: black;
+}
+.label_header {
+    width: 150px;
+    height: 20px;
+    float: left;
+    text-align: center;
+    color: grey;
+    font-size: 95%;
+    border-left: 0.5px solid rgb(179, 179, 179);
+    border-bottom: 1px solid rgb(179, 179, 179);
+}
+.resource {
+    border-bottom: 0.5px solid rgb(179, 179, 179);
+    margin-top: 14px;
+    width: 100%;
+    height: 30px;
+    padding-left: 22px;
+}
+
+a:link{
+    text-decoration: none;
+}
