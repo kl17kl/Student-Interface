@@ -1,16 +1,13 @@
-<!--
-@announcements on the student interface.
-@date created 03/19/2020
-@author Katie Lee #6351696 (kl17kl)
--->
+<!--The announcements page on the student interface.-->
 
 <html>
     <head>
       <title>ELearner: COSC 3P94 Announcements</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="style.css">
-      <script type="text/javascript" src="scripts.js"></script>
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/forums.css">
+      <script type="text/javascript" src="scripts/main.js"></script>
     </head>
     <body>
       <!-- The top header -->
@@ -19,44 +16,105 @@
         <div style="float: right">
           <a class="nav_item">help</a>
           <a class="nav_item">sign-out</a>
-          <a href="#"><img src="img/user.png" alt="user" style="margin-top: -5px; width: 30px; padding: 0;"/></a>
+          <div style="float: right">
+            <div id="dropbtn">
+              <button class="dropdown" onclick="hideOnClickOutside('dropmenu', 'dropbtn')"><img class="dropdown_img" src="img/user.png" alt="user" style="width: 27px; padding: 0;"/></button>
+              <div id="dropmenu" class="dropdown_content" style="display: none">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Nav bar divider -->
       <div id="divider"></div>
       <!-- The courses nav bar -->
       <div id="courses" class="navbar">
-        <a href="#" style="margin: -5px 10px"><button class="button btn_border">HOME</button></a>
+        <a href="dashboard.html" style="margin: -5px 10px"><button class="button btn_border"><img class="home_icon" src="img/home.png"/>HOME</button></a>
         <a href="#"><button class="button btn_filled" style="margin: -5px -20px">COSC 3P94</button></a>
         <div style="float: right">
-          <a href="#"><img src="img/courses.png" class="btn_course_menu" alt="menu"/></a>
+          <div id="coursebtn" class="course_btn_container" onclick="hideOnClickOutside('coursemenu', 'coursebtn')">
+            <img src="img/courses.png" class="btn_course_menu" alt="menu"/>
+            <div class="course_menu_overlay">
+              <a href="#">
+                <img src="img/courses_green.png" class="btn_course_menu_green" alt="menu"/>
+              </a>
+            </div>
+            <div id="coursemenu" class="course_menu_content" style="display: none">
+              <p class="course_menu_item">You are not enrolled in any other courses.</a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- The page body-->
       <div id="page_body">
         <!-- The services nav bar -->
         <div class="services column"> 
-          <div class="service_item_bkg"><a href="#"><img src="img/about.png" class="service_item" alt="about"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/announcements.png" class="service_item" alt="announcements"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/resources.png" class="service_item" alt="resources"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/to-do.png" class="service_item" alt="to-do"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a></div>
-          <div class="service_item_bkg"><a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a></div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a>
+              <div class="service_label">
+                <a href="#">About</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg active_bkg">
+            <div class="service_container">
+              <a href="#"><img src="img/announcements.png" class="service_item active_service" alt="announcements"/></a>
+              <div class="service_label">
+                <a href="#">Announcements</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="resources.html"><img src="img/resources.png" class="service_item" alt="resources"/></a>
+              <div class="service_label">
+                <a href="#">Resources</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="to-do.html"><img src="img/to-do.png" class="service_item" alt="to-do"/></a>
+              <div class="service_label">
+                <a href="#">To-do</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="gradebook.html"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a>
+              <div class="service_label">
+                <a href="#">Gradebook</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a>
+              <div class="service_label">
+                <a href="#">Forums</a>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- The main display -->
         <div class="display column">
-          <p class="page_title">Announcements</p>        
-          <div class="forum_left column">
-            <div id="annbox1" class="forum_item" style="background-color: #D5F5CD; height: 50px; border-top: 0.5px solid rgb(179, 179, 179)" onclick="toggleDisplayAnn('ann1')">
+          <p class="page_title">Announcements</p>   
+          <div id="divider" style="background-color: #67C781;"></div>     
+          <div class="forum_left column" style="height: 91.1%;">
+            <div id="annbox1" class="forum_item" style="background-color: #D5F5CD; height: 50px" onclick="toggleDisplayAnn('annbox1', 'ann1')">
               <div class="column">
                 <img src="img/bockus.png" class="profile" alt="user"/>
               </div>
               <div class="column">
-                <p class="forum_header">Welcome to COSC 3P94</p>
-                <p class="forum_subheader">Posted by Dave Bockus on Jan. 12 @9:10am</p>
+                <p class="forum_header">Form into groups of 3-4</p>
+                <p class="forum_subheader">Posted by Dave Bockus on Feb. 10 @12:03pm</p>
               </div>
             </div>
-            <div id="annbox2" class="forum_item" style="height: 50px" onclick="toggleDisplayAnn('ann2')">
+            <div id="annbox2" class="forum_item" style="height: 50px" onclick="toggleDisplayAnn('annbox2', 'ann2')">
               <div class="column">
                 <img src="img/bockus.png" class="profile" alt="user"/>
               </div>
@@ -65,22 +123,22 @@
                 <p class="forum_subheader">Posted by Dave Bockus on Feb. 19 @3:28pm</p>
               </div>
             </div>
-            <div id="annbox3" class="forum_item" style="height: 50px" onclick="toggleDisplayAnn('ann3')">
+            <div id="annbox3" class="forum_item" style="height: 50px" onclick="toggleDisplayAnn('annbox3', 'ann3')">
                 <div class="column">
                   <img src="img/bockus.png" class="profile" alt="user"/>
                 </div>
                 <div class="column">
-                  <p class="forum_header">Form into groups of 3-4</p>
-                  <p class="forum_subheader">Posted by Dave Bockus on Feb. 10 @12:03pm</p>
+                  <p class="forum_header">Welcome to COSC 3P94</p>
+                  <p class="forum_subheader">Posted by Dave Bockus on Jan. 12 @9:10am</p>
                 </div>
               </div>
           </div>
           <!-- The forum expanded display -->
           <div id="ann1" class="forum_right column" style="color: black; display: block;">
             <div class="forum_thread">
-              <p class="forum_header" style="font-size: 18px">Welcome to COSC 3P94</p>
-              <p class="forum_subheader">Posted by Dave Bockus on Jan. 12 @9:10am</p>
-              <p style="padding: 6px 15px">Classes start this Wednesday. You won't be having seminars until after the third week in. In class I will cover the course syllabus but you can also check it out in the resources page.</p>
+              <p class="forum_header" style="font-size: 18px">Form into groups of 3-4</p>
+              <p class="forum_subheader">Posted by Dave Bockus on Feb. 10 @12:03pm</p>
+              <p style="padding: 6px 15px">As mentioned in class, you'll need to get into groups of 3-4. I have made a post on the forums page for you to use to find your group memebers. I recommend you check it out as it provides further details about group formation.</p>
             </div>
           </div>
           <!-- The 2nd selectable announcement (initially hidden) -->
@@ -94,16 +152,17 @@
           <!-- The 3rd selectable announcement (initially hidden) -->
           <div id="ann3" class="forum_right column" style="color: black; display: none;">
             <div class="forum_thread" style="height: 115px">
-              <p class="forum_header" style="font-size: 18px">Form into groups of 3-4</p>
-              <p class="forum_subheader">Posted by Dave Bockus on Feb. 10 @12:03pm</p>
-              <p style="padding: 6px 15px">As mentioned in class, you'll need to get into groups of 3-4 people. I have made a post on the forums page for you to use to find your group memebers. I recommend you check it out as it provides further details about group formation.</p>
+              <p class="forum_header" style="font-size: 18px">Welcome to COSC 3P94</p>
+              <p class="forum_subheader">Posted by Dave Bockus on Jan. 12 @9:10am</p>
+              <p style="padding: 6px 15px">Classes start this Wednesday. You won't be having seminars until after the third week in. In class I will cover the course syllabus but you can also check it out in the resources page.</p>
             </div>
           </div>
         </div>
       </div>
       <!-- The footer -->
+      <div id="divider" style="width: 90%; margin: auto; margin-top: 31px;"></div>
       <div id="footer">
-        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Barral • COSC 3P94 • Stage 2
+        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Baral - COSC 3P94 - Stage 2
       </div>
     </body>
 </html>
