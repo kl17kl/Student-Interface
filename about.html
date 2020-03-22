@@ -1,0 +1,154 @@
+<!-- The apout page descripts the course details, prof contact details, office hours, etc.-->
+
+<html>
+    <head>
+      <title>ELearner: COSC 3P94 About</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="styles/main.css">
+      <script type="text/javascript" src="scripts/main.js"></script>
+      <style>
+        .about_left {
+        float: left;
+        width: 33%;
+        height: 400px;
+      }
+      .about_right {
+        float: left;
+        width: 63%;
+        height :400px;
+      }
+      .about_container {
+        width: 80%;
+        height: 200px;
+        padding: 20px;
+        margin: 20px 20px 20px;
+        line-height: 1.5;
+        color: black;
+        border: 1px solid #72CF93;
+        border-radius: 5px;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="top" class="navbar">
+        <a href="#"><img src="img/logo.png" alt="logo" style="margin-top: -5px; width: 100px;"/></a>
+        <div style="float: right">
+          <a class="nav_item">help</a>
+          <a class="nav_item">sign-out</a>
+          <div style="float: right">
+            <div id="dropbtn">
+              <button class="dropdown" onclick="hideOnClickOutside('dropmenu', 'dropbtn')"><img class="dropdown_img" src="img/user.png" alt="user" style="width: 27px; padding: 0;"/></button>
+              <div id="dropmenu" class="dropdown_content" style="display: none">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Nav bar divider -->
+      <div id="divider"></div>
+      <!-- The courses nav bar -->
+      <div id="courses" class="navbar">
+        <a href="dashboard.html" style="margin: -5px 10px"><button class="button btn_border"><img class="home_icon" src="img/home.png"/>HOME</button></a>
+        <a href="#"><button class="button btn_filled" style="margin: -5px -20px">COSC 3P94</button></a>
+        <div style="float: right">
+          <div id="coursebtn" class="course_btn_container" onclick="hideOnClickOutside('coursemenu', 'coursebtn')">
+            <img src="img/courses.png" class="btn_course_menu" alt="menu"/>
+            <div class="course_menu_overlay">
+              <a href="#">
+                <img src="img/courses_green.png" class="btn_course_menu_green" alt="menu"/>
+              </a>
+            </div>
+            <div id="coursemenu" class="course_menu_content" style="display: none">
+              <p class="course_menu_item">You are not enrolled in any other courses.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- The page body-->
+      <div id="page_body">
+        <!-- The services nav bar -->
+        <div class="services column"> 
+          <div class="service_item_bkg active_bkg">
+            <div class="service_container">
+              <a href="#"><img src="img/about.png" class="service_item active_service" alt="about"/></a>
+              <div class="service_label">
+                <a href="#">About</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a>
+              <div class="service_label">
+                <a href="#">Announcements</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="resources.html"><img src="img/resources.png" class="service_item" alt="resources"/></a>
+              <div class="service_label">
+                <a href="#">Resources</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="to-do.html"><img src="img/to-do.png" class="service_item" alt="to-do"/></a>
+              <div class="service_label">
+                <a href="#">To-do</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="gradebook.html"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a>
+              <div class="service_label">
+                <a href="#">Gradebook</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a>
+              <div class="service_label">
+                <a href="#">Forums</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- The main display -->
+        <div class="display column">
+          <div class="page_title">About</div>
+          <div id="divider" style="background-color: #67C781;"></div>
+          <!-- Left hand side -->
+          <div class="about_left">
+            <ul class="about_container" style="margin-left: 30px;">
+              <label for="course_name">Course Name: COSC 3P94</label><br/>
+              <label for="prof_name">Professor: Dave Bockus </label><br/>
+              <label for="prof_email">Email: bockus@brocku.ca</label><br/><br/>
+              <label for="lecture_time">Lecture Time: W 9:30am-11:00am  STH 216</label><br/>
+              <label for="prof_office_location">Office Location: MCJ 324</label><br/>
+              <label for="prof_office_hours">Office Hours: Monday 09:00am-11-00am</lab1el>
+            </ul>
+          </div>
+          <!-- Right hand side -->
+          <div class="about_right">
+            <div class="about_container">Course Description:<br/><br/>
+              An introduction to the study and design of human/computer interfaces. 
+              The course will begin with an introduction to human factors - the design and support of systems for human use. 
+              Topics will include but are not limited to user modelling, task analysis, goal oriented design,  command languages, grammars, menu and window systems, user documentation, and on-line help systems. 
+            </div>
+          </div >
+        </div>
+      </div>
+      <!-- The footer -->
+      <div id="divider" style="width: 90%; margin: auto; margin-top: 31px;"></div>
+      <div id="footer">
+        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Baral - COSC 3P94 - Stage 2
+      </div>
+    </body>
+</html>
