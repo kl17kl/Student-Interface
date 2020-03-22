@@ -1,16 +1,13 @@
-<!--
-@forums is the optional forums page on the student interface.
-@date created 03/17/2020
-@author Katie Lee #6351696 (kl17kl)
--->
+<!--Forums is the optional forums page on the student interface.-->
 
 <html>
     <head>
       <title>ELearner: COSC 3P94 Forums</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="style.css">
-      <script type="text/javascript" src="scripts.js"></script>
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/forums.css">
+      <script type="text/javascript" src="scripts/main.js"></script>
     </head>
     <body>
       <!-- The top header -->
@@ -19,32 +16,94 @@
         <div style="float: right">
           <a class="nav_item">help</a>
           <a class="nav_item">sign-out</a>
-          <a href="#"><img src="img/user.png" alt="user" style="margin-top: -5px; width: 30px; padding: 0;"/></a>
+          <div style="float: right">
+            <div id="dropbtn">
+              <button class="dropdown" onclick="hideOnClickOutside('dropmenu', 'dropbtn')"><img class="dropdown_img" src="img/user.png" alt="user" style="width: 27px; padding: 0;"/></button>
+              <div id="dropmenu" class="dropdown_content" style="display: none">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Nav bar divider -->
       <div id="divider"></div>
       <!-- The courses nav bar -->
       <div id="courses" class="navbar">
-        <a href="#" style="margin: -5px 10px"><button class="button btn_border">HOME</button></a>
+        <a href="dashboard.html" style="margin: -5px 10px"><button class="button btn_border"><img class="home_icon" src="img/home.png"/>HOME</button></a>
         <a href="#"><button class="button btn_filled" style="margin: -5px -20px">COSC 3P94</button></a>
         <div style="float: right">
-          <a href="#"><img src="img/courses.png" class="btn_course_menu" alt="menu"/></a>
+          <div id="coursebtn" class="course_btn_container" onclick="hideOnClickOutside('coursemenu', 'coursebtn')">
+            <img src="img/courses.png" class="btn_course_menu" alt="menu"/>
+            <div class="course_menu_overlay">
+              <a href="#">
+                <img src="img/courses_green.png" class="btn_course_menu_green" alt="menu"/>
+              </a>
+            </div>
+            <div id="coursemenu" class="course_menu_content" style="display: none">
+              <p class="course_menu_item">You are not enrolled in any other courses.</a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- The page body-->
       <div id="page_body">
         <!-- The services nav bar -->
         <div class="services column"> 
-          <div class="service_item_bkg"><a href="#"><img src="img/about.png" class="service_item" alt="about"/></a></div>
-          <div class="service_item_bkg"><a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/resources.png" class="service_item" alt="resources"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/to-do.png" class="service_item" alt="to-do"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a></div>
-          <div class="service_item_bkg"><a href="#"><img src="img/forums.png" class="service_item" alt="forums"/></a></div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a>
+              <div class="service_label">
+                <a href="#">About</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a>
+              <div class="service_label">
+                <a href="#">Announcements</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="resources.html"><img src="img/resources.png" class="service_item" alt="resources"/></a>
+              <div class="service_label">
+                <a href="#">Resources</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="to-do.html"><img src="img/to-do.png" class="service_item" alt="to-do"/></a>
+              <div class="service_label">
+                <a href="#">To-do</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="gradebook.html"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a>
+              <div class="service_label">
+                <a href="#">Gradebook</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg active_bkg">
+            <div class="service_container">
+              <a href="#"><img src="img/forums.png" class="service_item active_service" alt="forums"/></a>
+              <div class="service_label">
+                <a href="#">Forums</a>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- The main display -->
         <div class="display column">
+          <div class="page_title">Forums</div>
+          <div id="divider" style="background-color: #67C781;"></div>
           <div class="forum_left column">
             <div id="threadbox1" class="forum_item" style="background-color: #D5F5CD" onclick="displayHidden('thread1')">
               <div class="column">
@@ -99,6 +158,12 @@
                 <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">2 Upvotes</span></div>
                 <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">14 Views</span></div>
               </div>
+              <div class="column" style="margin-left: 50px;">
+                <button class="forum_button btn_filled">Comment</button>
+              </div>
+              <div class="column" style="width: 30px; margin-left: 10px">
+                <button class="forum_button btn_border" style="width: 30px;" text-align: center;""><img src="img/upvote.png" style="width: 19px; margin: -3px 0 0 -2px"/></button>
+              </div>
             </div>
             <div class="forum_comment" style="margin-left: 50px; width: 704px">
               <div class="column">
@@ -112,6 +177,12 @@
                 <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
                 <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">9 Views</span></div>
               </div>
+              <div class="column" style="margin-left: 55px;">
+                <button class="forum_button btn_filled">Comment</button>
+              </div>
+              <div class="column" style="width: 30px; margin-left: 10px">
+                <button class="forum_button btn_border" style="width: 30px;" text-align: center;""><img src="img/upvote.png" style="width: 19px; margin: -3px 0 0 -2px"/></button>
+              </div>
             </div>
             <div class="forum_comment" style="margin-left: 50px; width: 704px">
               <div class="column">
@@ -120,10 +191,16 @@
               <div class="column">
                 <p class="forum_header" style="font-size: 16px">Re: Looking for a group!</p>
                 <p class="forum_subheader">Commented by Nadia Ali on Feb. 12 @12:46</p>
-                <p style="padding: 0 0 4px 15px">Hi Maria and Cameron, I'm a COSC student and I would love to join you guys:)</p>
+                <p style="padding: 0 0 4px 15px">Hi Maria, I'm a COSC student and I would love to join you guys:)</p>
                 <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">0 Comments</span></div>
                 <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
                 <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">8 Views</span></div>
+              </div>
+              <div class="column" style="margin-left: 87px;">
+                <button class="forum_button btn_filled">Comment</button>
+              </div>
+              <div class="column" style="width: 30px; margin-left: 10px">
+                <button class="forum_button btn_border" style="width: 30px;" text-align: center;""><img src="img/upvote.png" style="width: 19px; margin: -3px 0 0 -2px"/></button>
               </div>
             </div>
           </div>
@@ -149,6 +226,12 @@
                   <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
                   <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">8 Views</span></div>
                 </div>
+                <div class="column" style="margin-left: 67px;">
+                  <button class="forum_button btn_filled">Comment</button>
+                </div>
+                <div class="column" style="width: 30px; margin-left: 10px">
+                  <button class="forum_button btn_border" style="width: 30px;" text-align: center;""><img src="img/upvote.png" style="width: 19px; margin: -3px 0 0 -2px"/></button>
+                </div>
               </div>
               <div class="forum_comment" style="margin-left: 50px; width: 704px">
                 <div class="column">
@@ -161,6 +244,12 @@
                   <div class="column" style="height: 20px"><img src="img/answers.png" class="forum_icons"/><span class="forum_labels">0 Comments</span></div>
                   <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
                   <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">2 Views</span></div>
+                </div>
+                <div class="column" style="margin-left: 235px;">
+                  <button class="forum_button btn_filled">Comment</button>
+                </div>
+                <div class="column" style="width: 30px; margin-left: 10px">
+                  <button class="forum_button btn_border" style="width: 30px;" text-align: center;""><img src="img/upvote.png" style="width: 19px; margin: -3px 0 0 -2px"/></button>
                 </div>
               </div>
               <div class="forum_comment" style="width: 725px">
@@ -175,13 +264,20 @@
                   <div class="column" style="height: 20px"><img src="img/upvote.png" class="forum_icons"/><span class="forum_labels">0 Upvotes</span></div>
                   <div class="column" style="height: 20px"><img src="img/views.png" class="forum_icons"/><span class="forum_labels">3 Views</span></div>
                 </div>
+                <div class="column" style="margin-left: 107px;">
+                  <button class="forum_button btn_filled">Comment</button>
+                </div>
+                <div class="column" style="width: 30px; margin-left: 10px">
+                  <button class="forum_button btn_border" style="width: 30px;" text-align: center;""><img src="img/upvote.png" style="width: 19px; margin: -3px 0 0 -2px"/></button>
+                </div>
               </div>
           </div>
         </div>
       </div>
       <!-- The footer -->
+      <div id="divider" style="width: 90%; margin: auto; margin-top: 31px;"></div>
       <div id="footer">
-        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Barral • COSC 3P94 • Stage 2
+        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Baral - COSC 3P94 - Stage 2
       </div>
     </body>
 </html>
