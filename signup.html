@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sing In</title>
+    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+    <body>
+        <div class="loginbox" id="mainForm">
+            <h1>Sign in</h1>
+            <form id="form" onsubmit="event.preventDefault();" >
+                <p>Username</p>
+                <input type="text" name="" placeholder="campusID@university.ca">
+                <p>Password</p>
+                <input type="password" name="" placeholder="campus password">
+                <input id="loginButton" type="submit" name="" value="Login">
+                <a href="#">Forgot password?</a><br>
+                <a href="#">learn more about this institution</a>
+            </form>
+        </div>
+        <div class="spbox" id="spbox">
+            <h1 style="color: white; font-size: 27px;">Are you a professor or a student?</h1>
+            <div class="BCon">
+                <div class="stuButton">
+                   
+                    <button class="button1">
+                        <img class="imgIcons" alt="student image" src="img/reading.png">
+                        Student
+                    </button>
+                </div>
+                <div class=vertical></div>
+                <div class="InsButton">
+                    <button class="button2">
+                        <img class="imgIcons" alt="professor image" src="img/professor.png">
+                        Instructor
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            const button = document.getElementById("loginButton");
+            button.onclick = function(){
+                document.getElementById("mainForm").classList.add("inv");
+                document.getElementById("spbox").classList.add("vis");
+                document.getElementById("spbox").classList.add("z");
+            }
+            const stuButton = document.getElementById("button1");
+            stuButton.onclick = function(){
+                window.location.replace("singup.html");
+            }
+        </script> 
+    </body>
+</html>
