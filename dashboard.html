@@ -1,0 +1,212 @@
+<!-- The dashboard page on the student interface.-->
+<html>
+    <head>
+      <title>ELearner: Dashbaord</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/dashboard.css">
+      <script type="text/javascript" src="scripts/main.js"></script>
+    </head>
+    <body>
+   <!-- The top header -->
+   <div id="top" class="navbar">
+    <a href="#"><img src="img/logo.png" alt="logo" style="margin-top: -5px; width: 100px;"/></a>
+    <div style="float: right">
+      <a class="nav_item">help</a>
+      <a class="nav_item">sign-out</a>
+      <div style="float: right">
+        <div id="dropbtn">
+          <button class="dropdown" onclick="hideOnClickOutside('dropmenu', 'dropbtn')"><img class="dropdown_img" src="img/user.png" alt="user" style="width: 27px; padding: 0;"/></button>
+          <div id="dropmenu" class="dropdown_content" style="display: none">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Nav bar divider -->
+  <div id="divider"></div>
+  <!-- The courses nav bar -->
+  <div id="courses" class="navbar">
+    <a href="#" style="margin: -5px 10px">
+        <button class="button btn_filled"><img class="home_icon" src="img/home.png" style="filter: brightness(0) invert(1)"/>HOME</button>
+    </a>
+    <a href="about.html"><button class="button btn_border" style="margin: -5px -20px">COSC 3P94</button></a>
+    <div style="float: right">
+      <div id="coursebtn" class="course_btn_container" onclick="hideOnClickOutside('coursemenu', 'coursebtn')">
+        <img src="img/courses.png" class="btn_course_menu" alt="menu"/>
+        <div class="course_menu_overlay">
+          <a href="#">
+            <img src="img/courses_green.png" class="btn_course_menu_green" alt="menu"/>
+          </a>
+        </div>
+        <div id="coursemenu" class="course_menu_content" style="display: none">
+          <p class="course_menu_item">You are not enrolled in any other courses.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- The page body-->
+  <div id="page_body">
+    <!-- The services nav bar -->
+    <div class="services column"> 
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a>
+          <div class="service_label">
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a>
+          <div class="service_label">
+            <a href="#">Announcements</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="resources.html"><img src="img/resources.png" class="service_item" alt="resources"/></a>
+          <div class="service_label">
+            <a href="#">Resources</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="to-do.html"><img src="img/to-do.png" class="service_item" alt="to-do"/></a>
+          <div class="service_label">
+            <a href="#">To-do</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="gradebook.html"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a>
+          <div class="service_label">
+            <a href="#">Gradebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a>
+          <div class="service_label">
+            <a href="#">Forums</a>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- The main display -->
+        <div class="display column">
+            <div class="div1">
+              <p class="date" style="margin-left: 25px; font-size: 25px;">February 2020</p>
+              <button class="calButton"><</button>
+              <button class="calButton">></button>
+              <div class="calendar">
+                <div class="calendar__header">
+                  <div>mon</div>
+                  <div>tue</div>
+                  <div>wed</div>
+                  <div>thu</div>
+                  <div>fri</div>
+                  <div>sat</div>
+                  <div>sun</div>
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">1</div>
+                  <div class="calendar__day day">2</div>
+                  <div class="calendar__day day">3</div>
+                  <div class="calendar__day day hoverrr">
+                    <div class="popup" onclick="showPopup('myPopup1')">4
+                      <p class="calTask">COSC 3P94</p> 
+                      <span class="popuptext" id="myPopup1">Quiz 2 Due @11:59pm</span>
+                    </div>
+                  </div>
+                  <div class="calendar__day day">5</div>
+                  <div class="calendar__day day">6</div>
+                  <div class="calendar__day day">7</div>
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">8</div>
+                  <div class="calendar__day day">9</div>
+                  <div class="calendar__day day">10</div>
+                  <div class="calendar__day day">11</div>
+                  <div class="calendar__day day">12</div>
+                  <div class="calendar__day day hoverrr">
+                    <div class="popup" onclick="showPopup('myPopup2')">13
+                      <p class="calTask">COSC 3P94</p> 
+                      <span class="popuptext" id="myPopup2">Assignment 1 Due @11:59pm</span>
+                    </div>
+                  </div>
+                  <div class="calendar__day day">14</div>        
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">15</div>
+                  <div class="calendar__day day">16</div>
+                  <div class="calendar__day day">17</div>
+                  <div class="calendar__day day">18</div>
+                  <div class="calendar__day day">19</div>
+                  <div class="calendar__day day">20</div>
+                  <div class="calendar__day day">21</div>    
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">22</div>
+                  <div class="calendar__day day">23</div>
+                  <div class="calendar__day day hoverrr">
+                    <div class="popup" onclick="showPopup('myPopup3')">24
+                      <p class="calTask">COSC 3P94</p> 
+                      <span class="popuptext" id="myPopup3">Midterm Exam @11:00am-12:30pm</span>
+                    </div>
+                  </div>
+                  <div class="calendar__day day">25</div>
+                  <div class="calendar__day day">26</div> 
+                  <div class="calendar__day day">27</div> 
+                  <div class="calendar__day day">28</div> 
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">29</div>
+                  <div class="calendar__day day">30</div>
+                  <div class="calendar__day day">31</div>
+                  <div class="calendar__day day"></div>
+                  <div class="calendar__day day"></div>
+                  <div class="calendar__day day"></div>
+                  <div class="calendar__day day"></div>
+                </div>
+              </div>
+            </div>
+            <div class="div2">
+              <p class="todoHeader" style="margin-left: 20px; font-size: 18px; font-weight: bold;">Notifications</p>
+              <div class="task" style="border-top: 0.5px solid rgb(109, 109, 109)">
+                <p class="notifTitle">COSC 3P94 - new announcement</p>
+                <p style="color: rgb(160, 160, 160); font-size:10px; margin-top: -12px">Feb. 10 @12:03pm</p>
+                <p class="notifDesc">Form into groups of 3-4: As mentioned in class, you'll need to get into groups of 3-4. I have made a post on the... 
+                  <a href="announcements.html" class="notifa">learn more</a>
+                </p>
+              </div>
+              <div class="task" style="border-top: 0.5px solid rgba(109, 109, 109, 0)">
+                <p class="notifTitle">COSC 3P94 - new resource has been uploaded</p>
+                <p style="color: rgb(160, 160, 160); font-size:10px; margin-top: -12px">Feb. 31 @2:41pm</p>
+                <p class="notifDesc">A new resource has been uploaded to folder Week 4.<br/>
+                  "Seminar 4 - Persona Exercise.pdf"&nbsp&nbsp&nbsp<a href="resources.html" class="notifa">learn more</a></p>
+              </div>
+              <div class="task" style="border-top: 0.5px solid rgb(109, 109, 109, 0)">
+                <p class="notifTitle">COSC 3P94 - new resource has been uploaded</p>
+                <p style="color: rgb(160, 160, 160); font-size:10px; margin-top: -12px">Feb 31. @2:42pm</p>
+                <p class="notifDesc">A new resource has been uploaded to folder Week 4.<br/>
+                  "Persona Template.doc"&nbsp&nbsp&nbsp<a href="resources.html" class="notifa">learn more</a></p>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- The footer -->
+    <div id="divider" style="width: 90%; margin: auto; margin-top: 31px;"></div>
+    <div id="footer">
+        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Baral - COSC 3P94 - Stage 2
+    </div>
+    </body>
+</html>
