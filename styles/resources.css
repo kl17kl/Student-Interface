@@ -1,11 +1,11 @@
 /* Resources Page Styles - resources.css */
 .res_right {
-    width: 68%;
+    width: 76%;
 }
 .folder {
     width: 65%;
     height: 10px;
-    border: 1px solid rgb(72, 131, 86);
+    border: 1px solid #67C781;
     border-radius: 5px;
     padding: 15px;
     margin: 15px 0 15px 30px;
@@ -21,23 +21,36 @@
     color: black;
 }
 .label_header {
+    margin-top: 15px;
     width: 150px;
-    height: 20px;
+    height: 30px;
     float: left;
     text-align: center;
     color: grey;
-    font-size: 95%;
-    border-left: 0.5px solid rgb(179, 179, 179);
     border-bottom: 1px solid rgb(179, 179, 179);
 }
 .resource {
     border-bottom: 0.5px solid rgb(179, 179, 179);
     margin-top: 14px;
-    width: 100%;
+    width: 98.5%;
     height: 30px;
-    padding-left: 22px;
+    overflow: hidden;
 }
-
-a:link{
+a:link {
     text-decoration: none;
+    color: grey;
 }
+a:link:hover {
+    color: #67C781;
+}
+a:visited {
+    color: rgb(97, 89, 129);
+}
+a:visited:hover {
+    color: rgb(88, 124, 102);    
+}
+.resource_detail {
+    float: left;
+    text-align: center;
+    font-size: 14px;
+}   
