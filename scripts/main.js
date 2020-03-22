@@ -1,6 +1,25 @@
 //Student interface - main.js
 
-//This function displays hidden elements
+//This functions displays the dropdown options for the profile button
+function hideOnClickOutside(element, display) {
+    var x = document.getElementById(element)
+    var y = document.getElementById(display)
+    x.style.display = "block";
+    const outsideClickListener = event => {
+        if (!y.contains(event.target) && isVisible(x)) { 
+          x.style.display = "none";
+          removeClickListener();
+        }
+    }
+    const removeClickListener = () => {
+        document.removeEventListener('click', outsideClickListener);
+    }
+    document.addEventListener('click', outsideClickListener)
+}
+const isVisible = elem => !!elem && !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
+
+
+//This function displays hidden elements for the Forums page
 function displayHidden(thread) {
     var t1 = document.getElementById("thread1");
     var t2 = document.getElementById("thread2");
@@ -24,49 +43,25 @@ function displayHidden(thread) {
         } 
     }
 }
-//This function displays hidden elements
-function toggleDisplayAnn(ann) {
-    var a1 = document.getElementById("ann1");
-    var a2 = document.getElementById("ann2");
-    var a3 = document.getElementById("ann3");
-    var a1_box = document.getElementById("annbox1");
-    var a2_box = document.getElementById("annbox2");
-    var a3_box = document.getElementById("annbox3");
 
-    if (ann == "ann1") {
-        if (a1.style.display === "none") {
-            a1_box.style.background = "#D5F5CD";
-            a2_box.style.background = "none";
-            a3_box.style.background = "none";
-            a1.style.display = "block";
-            a2.style.display = "none";
-            a3.style.display = "none";
-        }
+
+//This function displays hidden elements for the Announcements page
+function toggleDisplayAnn(x, z) {
+    var x = document.getElementById(x);     // the folder button
+    var z = document.getElementById(z);     // the folder display
+    var box = ["annbox1", "annbox2", "annbox3"];
+    var display = ["ann1", "ann2", "ann3"];
+
+    for (let i = 0; i < box.length; i++) { // hide all folders that are not selected
+        document.getElementById(box[i]).style.background = "none";
+        document.getElementById(display[i]).style.display = "none";
     }
-    if (ann == "ann2") {
-        if (a2.style.display === "none") {
-            a2_box.style.background = "#D5F5CD";
-            a1_box.style.background = "none";
-            a3_box.style.background = "none";
-            a2.style.display = "block";
-            a1.style.display = "none";
-            a3.style.display = "none";
-        } 
-    }
-    if (ann == "ann3") {
-        if (a3.style.display === "none") {
-            a3_box.style.background = "#D5F5CD";
-            a1_box.style.background = "none";
-            a2_box.style.background = "none";
-            a3.style.display = "block";
-            a1.style.display = "none";
-            a2.style.display = "none";
-        } 
-    }
+    x.style.background = "#D5F5CD";
+    z.style.display = "block";
 }
 
-//This function displays hidden elements
 
+//This function displays hidden elements for the Resources page
 function toggleDisplayRes(x, z) {
     var x = document.getElementById(x);     // the folder button
     var z = document.getElementById(z);     // the folder display
@@ -80,3 +75,27 @@ function toggleDisplayRes(x, z) {
     x.style.background = "#D5F5CD";
     z.style.display = "block";
 }
+
+
+//This function displays the view of the graded optional assignment
+function view_graded() {
+    var modal = document.getElementById("returned_assign");
+    var modal_img = document.getElementById("opt_a");
+    var caption_text = document.getElementById("modal_caption");
+    
+    hideOnClickOutside("returned_assign", "opt_assign");
+
+    modal_img.src = "img/graded_assign.png"
+    caption_text.innerHTML = "Optional Assignment - Returned"
+    
+    var span = document.getElementsByClassName("modal_close")[0]; // to close modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+}
+
+// This function shows the popup from an event on the dashboard calendar
+function showPopup(x) {
+    var popup = document.getElementById(x);
+    popup.classList.toggle("show");
+  }
