@@ -1,0 +1,222 @@
+<!-- The gradebook page on the student interface.-->
+
+<html>
+    <head>
+      <title>ELearner: COSC 3P94 Gradebook</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/gradebook.css">
+      <script type="text/javascript" src="scripts/main.js"></script>
+    </head>
+    <body>
+      <!-- The top header -->
+      <div id="top" class="navbar">
+        <a href="#"><img src="img/logo.png" alt="logo" style="margin-top: -5px; width: 100px;"/></a>
+        <div style="float: right">
+          <a class="nav_item">help</a>
+          <a class="nav_item">sign-out</a>
+          <div style="float: right">
+            <div id="dropbtn">
+              <button class="dropdown" onclick="hideOnClickOutside('dropmenu', 'dropbtn')"><img class="dropdown_img" src="img/user.png" alt="user" style="width: 27px; padding: 0;"/></button>
+              <div id="dropmenu" class="dropdown_content" style="display: none">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Nav bar divider -->
+      <div id="divider"></div>
+      <!-- The courses nav bar -->
+      <div id="courses" class="navbar">
+        <a href="dashboard.html" style="margin: -5px 10px"><button class="button btn_border"><img class="home_icon" src="img/home.png"/>HOME</button></a>
+        <a href="#"><button class="button btn_filled" style="margin: -5px -20px">COSC 3P94</button></a>
+        <div style="float: right">
+          <div id="coursebtn" class="course_btn_container" onclick="hideOnClickOutside('coursemenu', 'coursebtn')">
+            <img src="img/courses.png" class="btn_course_menu" alt="menu"/>
+            <div class="course_menu_overlay">
+              <a href="#">
+                <img src="img/courses_green.png" class="btn_course_menu_green" alt="menu"/>
+              </a>
+            </div>
+            <div id="coursemenu" class="course_menu_content" style="display: none">
+              <p class="course_menu_item">You are not enrolled in any other courses.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- The page body-->
+      <div id="page_body">
+        <!-- The services nav bar -->
+        <div class="services column"> 
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a>
+              <div class="service_label">
+                <a href="#">About</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a>
+              <div class="service_label">
+                <a href="#">Announcements</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="resources.html"><img src="img/resources.png" class="service_item" alt="resources"/></a>
+              <div class="service_label">
+                <a href="#">Resources</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="to-do.html"><img src="img/to-do.png" class="service_item" alt="to-do"/></a>
+              <div class="service_label">
+                <a href="#">To-do</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg active_bkg">
+            <div class="service_container">
+              <a href="#"><img src="img/gradebook.png" class="service_item active_service" alt="gradebook"/></a>
+              <div class="service_label">
+                <a href="#">Gradebook</a>
+              </div>
+            </div>
+          </div>
+          <div class="service_item_bkg">
+            <div class="service_container">
+              <a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a>
+              <div class="service_label">
+                <a href="#">Forums</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- The main display -->
+        <div class="display column">
+          <p class="page_title">Gradebook</p>
+          <div id="divider" style="background-color: #67C781;"></div>
+          <table style="margin-top: 24px;">
+            <tr>
+              <th style="padding: 8px">Gradebook Item</th>
+              <th style="padding: 8px">Grade</th>
+              <th style="padding: 8px">Weight</th>
+              <th style="padding: 8px">Due Date</th>
+              <th style="padding: 8px; width: 200px">Comments</th>
+            </tr>
+            <tr>
+              <td>Final Exam</td>
+              <td>-</td>
+              <td>30%</td>
+              <td>-</td>
+              <td style="width: 200px;"> </td>
+            </tr>
+            <tr>
+              <td>Final Project</td>
+              <td>-</td>
+              <td>25%</td>
+              <td>-</td>
+              <td style="width: 200px;"> </td>
+            </tr>
+            <tr>
+              <td>Midterm Exam</td>
+              <td>57/69  (82.6%)</td>
+              <td>25%</td>
+              <td>Feb. 21, 2020  @2:00pm</td>
+              <td style="width: 200px;"> </td>
+            </tr>
+            <tr>
+              <td>Assignment 1</td>
+              <td>9.5/10  (95%)</td>
+              <td>13%</td>
+              <td>Mar. 13, 2020  @11:59pm</td>
+              <td style="width: 200px;">
+                <button id="opt_assign" onclick="view_graded()">View</button>
+                <div id="returned_assign" class="modal">
+                  <span class="modal_close">&times;</span>
+                  <div id="modal_caption"></div>
+                  <img class="modal_content" id="opt_a">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 2</td>
+              <td>Submitted</td>
+              <td>1%</td>
+              <td>Mar. 25, 2020  @3:00pm</td>
+              <td style="width: 200px;"> </td>
+            </tr>
+            <tr>
+              <td>Quiz 1</td>
+              <td>Submitted</td>
+              <td>1%</td>
+              <td>Mar. 25, 2020  @3:00pm</td>
+              <td style="width: 200px;"> </td>
+            </tr>
+            <tr>
+              <td>Seminar 7</td>
+              <td>-</td>
+              <td>1%</td>
+              <td>Mar. 25, 2020  @3:00pm</td>
+              <td> </td>
+            </tr style="width: 200px;">
+            <tr>
+              <td>Seminar 6</td>
+              <td>-</td>
+              <td>1%</td>
+              <td>Mar. 18, 2020  @3:00pm</td>
+              <td style="width: 200px;"> </td>
+            </tr>
+            <tr>
+              <td>Seminar 5</td>
+              <td>-</td>
+              <td>1%</td>
+              <td>Mar. 11, 2020  @3:00pm</td>
+              <td style="width: 200px;"> </td>
+            </tr>
+            <tr>
+              <td>Seminar 4</td>
+              <td>3/5  (80%)</td>
+              <td>1%</td>
+              <td>Mar. 4, 2020  @3:00pm</td>
+              <td style="width: 200px;">Need to participate.</td>
+            </tr>
+            <tr>
+              <td>Seminar 3</td>
+              <td>5/5  (100%)</td>
+              <td>1%</td>
+              <td style="width: 200px;">Feb. 26, 2020  @3:00pm</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>Seminar 2</td>
+              <td>5/5  (100%)</td>
+              <td>1%</td>
+              <td style="width: 200px;">Feb. 19, 2020  @3:00pm</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>Seminar 1</td>
+              <td>4/5  (80%)</td>
+              <td>1%</td>
+              <td style="width: 200px;">Feb. 12, 2020  @3:00pm</td>
+              <td> </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- The footer -->
+      <div id="divider" style="width: 90%; margin: auto; margin-top: 31px;"></div>
+      <div id="footer">
+        Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Baral - COSC 3P94 - Stage 2
+      </div>
+    </body>
+</html>
