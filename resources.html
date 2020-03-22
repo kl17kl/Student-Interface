@@ -1,55 +1,111 @@
-<!--
-@resources page on the student interface.
-@date created 03/17/2020
-@author Wenjie Lin
--->
-<html>
+<!--The resources page on the student interface.-->
 
+<html>
 <head>
-  <title>ELEARNER</title>
+  <title>ELearner: COSC 3P94 Resources</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/resources.css">
   <script type="text/javascript" src="scripts/main.js"></script>
 </head>
-
 <body>
   <!-- The top header -->
   <div id="top" class="navbar">
-    <a href="#"><img src="img/logo.png" alt="logo" style="margin-top: -5px; width: 100px;" /></a>
+    <a href="#"><img src="img/logo.png" alt="logo" style="margin-top: -5px; width: 100px;"/></a>
     <div style="float: right">
       <a class="nav_item">help</a>
       <a class="nav_item">sign-out</a>
-      <a href="#"><img src="img/user.png" alt="user" style="margin-top: -5px; width: 30px; padding: 0;" /></a>
+      <div style="float: right">
+        <div id="dropbtn">
+          <button class="dropdown" onclick="hideOnClickOutside('dropmenu', 'dropbtn')"><img class="dropdown_img" src="img/user.png" alt="user" style="width: 27px; padding: 0;"/></button>
+          <div id="dropmenu" class="dropdown_content" style="display: none">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <!-- Nav bar divider -->
   <div id="divider"></div>
   <!-- The courses nav bar -->
   <div id="courses" class="navbar">
-    <a href="#" style="margin: -5px 10px"><button class="button btn_border">HOME</button></a>
+    <a href="dashboard.html" style="margin: -5px 10px"><button class="button btn_border"><img class="home_icon" src="img/home.png"/>HOME</button></a>
     <a href="#"><button class="button btn_filled" style="margin: -5px -20px">COSC 3P94</button></a>
     <div style="float: right">
-      <a href="#"><img src="img/courses.png" class="btn_course_menu" alt="menu" /></a>
+      <div id="coursebtn" class="course_btn_container" onclick="hideOnClickOutside('coursemenu', 'coursebtn')">
+        <img src="img/courses.png" class="btn_course_menu" alt="menu"/>
+        <div class="course_menu_overlay">
+          <a href="#">
+            <img src="img/courses_green.png" class="btn_course_menu_green" alt="menu"/>
+          </a>
+        </div>
+        <div id="coursemenu" class="course_menu_content" style="display: none">
+          <p class="course_menu_item">You are not enrolled in any other courses.</a>
+        </div>
+      </div>
     </div>
   </div>
   <!-- The page body-->
   <div id="page_body">
     <!-- The services nav bar -->
     <div class="services column"> 
-      <div class="service_item_bkg"><a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a></div>
-      <div class="service_item_bkg"><a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a></div>
-      <div class="service_item_bkg"><a href="#"><img src="img/resources.png" class="service_item" alt="resources"/></a></div>
-      <div class="service_item_bkg"><a href="#"><img src="img/to-do.png" class="service_item" alt="to-do"/></a></div>
-      <div class="service_item_bkg"><a href="#"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a></div>
-      <div class="service_item_bkg"><a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a></div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a>
+          <div class="service_label">
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a>
+          <div class="service_label">
+            <a href="#">Announcements</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg active_bkg">
+        <div class="service_container">
+          <a href="#"><img src="img/resources.png" class="service_item active_service" alt="resources"/></a>
+          <div class="service_label">
+            <a href="#">Resources</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="to-do.html"><img src="img/to-do.png" class="service_item" alt="to-do"/></a>
+          <div class="service_label">
+            <a href="#">To-do</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="gradebook.html"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a>
+          <div class="service_label">
+            <a href="#">Gradebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a>
+          <div class="service_label">
+            <a href="#">Forums</a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- The main display -->
     <div class="display column">
-      <p class="page_title">Resources</p>        
-      <div class="forum_left column" style="width: 25%;">
-        <div id="resbox1" class="folder" style="margin-top: 20px; background-color: #D5F5CD" onclick="toggleDisplayRes('resbox1', 'res1')">
+      <p class="page_title">Resources</p>      
+      <div id="divider" style="background-color: #67C781;"></div>  
+      <div class="forum_left column" style="width: 24%;">
+        <div id="resbox1" class="folder" style="margin-top: 30px; background-color: #D5F5CD" onclick="toggleDisplayRes('resbox1', 'res1')">
           <div class="column">
             <img src="img/folder.png" style="width: 17px; margin-top: -3px;"/>
           </div>
@@ -73,58 +129,96 @@
             <p class="folder_name">Week 3</p>
           </div>
         </div>
-      <div id="resbox4" class="folder" onclick="toggleDisplayRes('resbox4', 'res4')">
-        <div class="column">
-          <img src="img/folder.png" style="width: 17px; margin-top: -3px;"/>
-        </div>
-        <div class="column">
-          <p class="folder_name">Week 4</p>
+        <div id="resbox4" class="folder" onclick="toggleDisplayRes('resbox4', 'res4')">
+          <div class="column">
+            <img src="img/folder.png" style="width: 17px; margin-top: -3px;"/>
+          </div>
+          <div class="column">
+            <p class="folder_name">Week 4</p>
+          </div>
         </div>
       </div>
-    </div>
       <!-- The forum expanded display -->
-      <div class="res_right column" style="display: block; height: 21px;">
-        <div class="label_header" style="border-left: none; width: 339px;">File name</div>
-        <div class="label_header" style="width: 175px;">Uploaded by</div>
-        <div class="label_header">Date modified</div>
-        <div class="label_header">File size</div>
+      <div class="res_right column" style="display: block; height: 21px; background-color: ;">
+        <div class="label_header" style="border-left: none; width: 392px;">File name</div>
+        <div class="label_header" style="width: 169px;">Uploaded by</div>
+        <div class="label_header" style="width: 170px;">Date modified</div>
+        <div class="label_header" style="width: 170px;">File size</div>
       </div>
       <div id="res1" class="res_right column" style=" display: block;">
-        <div class="resource">
-          This is a resource item with file name, size, etc.
+        <div class="resource" style="margin-top: 40px;">  
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Course Introduction.ppt">Course Introduction.ppt</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-10</div>
+          <div class="resource_detail" style="width: 170px;">266 KB</div>
         </div>
         <div class="resource">
-          This is another resource item with file name, size, etc.
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Chapter 1 - GOMS Models.ppt">Chapter 1 - GOMS Models.ppt</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-10</div>
+          <div class="resource_detail" style="width: 170px;">356 KB</div>
         </div>
         <div class="resource">
-          INCLUDE SOMETHING FOR SEMINAR 1 (I.E.on the cosc 3p94 page - seminar week 1)
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Seminar 1 - Artifact Design.pdf">Seminar 1 - Artifact Design</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-11</div>
+          <div class="resource_detail" style="width: 170px;">531 KB</div>
         </div>
       </div>
       <div id="res2" class="res_right column" style="display: none;">
-        <div class="resource">
-          This is a resource item for week two.
+        <div class="resource" style="margin-top: 40px;">
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Chapter 2 - HTA.ppt">Chapter 2 - HTA.pdf</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-17</div>
+          <div class="resource_detail" style="width: 170px;">356 KB</div>
         </div>
         <div class="resource">
-          This is a seminar week 2 item.
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Seminar 2 - The Psychology of Everyday Actions.pdf">Seminar 2 - The Psychology of Everyday Actions.pdf</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-17</div>
+          <div class="resource_detail" style="width: 170px;">444 KB</div>
         </div>
       </div>
       <div id="res3" class="res_right column" style="display: none;">
-        <div class="resource">
-          This is a resource item FOR WEEK THREE.
+        <div class="resource" style="margin-top: 40px;">
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Chapter 3 - Interaction Design.ppt">Chapter 3 - Interaction Design.ppt</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-24</div>
+          <div class="resource_detail" style="width: 170px;">410 KB</div>
         </div>
         <div class="resource">
-          Filler textttt bbbbbeeeeeeeee
-        </div>
-        <div class="resource">
-          include week slides for each week and seminars for each week
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Seminar 3 - Design Exercise - Knowing What To Do.pdf">Seminar 3 - Design Exercise - Knowing What To Do.pdf</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-24</div>
+          <div class="resource_detail" style="width: 170px;">627 KB</div>
         </div>
       </div>
       <div id="res4" class="res_right column" style="display: none;">
+        <div class="resource" style="margin-top: 40px;">
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Chapter 4 - Persona.ppt">Chapter 4 - Persona.ppt</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-31</div>
+          <div class="resource_detail" style="width: 170px;">619 KB</div>
+        </div>
         <div class="resource">
-          You know the deal. at least 1 lec slides thing and 1 seminar thing.
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Seminar 4 - Persona Exercise.pdf">Seminar 4 - Persona Exercise.pdf</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-31</div>
+          <div class="resource_detail" style="width: 170px;">128 KB</div>
+        </div>
+        <div class="resource">
+          <div class="resource_detail file_name" style="width: 392px; text-align: left;"><a href="files_uploaded/Persona Template.doc">Persona Template.doc</a></div>
+          <div class="resource_detail" style="width: 169px;">Dave Bockus</div>
+          <div class="resource_detail" style="width: 170px;">2020-01-31</div>
+          <div class="resource_detail" style="width: 170px;">128 KB</div>
         </div>
       </div>
     </div>
+  </div>
+  <!-- The footer -->
+  <div id="divider" style="width: 90%; margin: auto; margin-top: 31px;"></div>
+  <div id="footer">
+    Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Baral - COSC 3P94 - Stage 2
   </div>
   </body>
 </html>
