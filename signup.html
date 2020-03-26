@@ -11,9 +11,9 @@
             <h1>Sign in</h1>
             <form id="form" onsubmit="event.preventDefault();" >
                 <p>Username</p>
-                <input type="text" name="" placeholder="campusID@university.ca">
+                <input id="usernameInput" type="text" name="" placeholder="campusID@university.ca">
                 <p>Password</p>
-                <input type="password" name="" placeholder="campus password">
+                <input id="passwordInput" type="password" name="" placeholder="campus password">
                 <input id="loginButton" type="submit" name="" value="Login">
                 <a href="#">Forgot password?</a><br>
                 <a href="#">learn more about this institution</a>
@@ -42,9 +42,14 @@
         <script>
             const button = document.getElementById("loginButton");
             button.onclick = function(){
+                if(document.getElementById("usernameInput").value == "bu12mo" 
+                && document.getElementById("passwordInput").value == "123123") {
+                    window.location.replace("dashboard.html");
+                } else {
                 document.getElementById("mainForm").classList.add("inv");
                 document.getElementById("spbox").classList.add("vis");
                 document.getElementById("spbox").classList.add("z");
+                }
             }
             const stuButton = document.getElementById("button1");
             stuButton.onclick = function(){

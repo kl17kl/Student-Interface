@@ -1,0 +1,204 @@
+<!--The resources page on the student interface.-->
+
+<html>
+<head>
+  <title>ELearner: COSC 3P94 To-Do</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/to-do.css">
+  <script type="text/javascript" src="scripts/main.js"></script>
+</head>
+<body>
+  <!-- The top header -->
+  <div id="top" class="navbar">
+    <a href="#"><img src="img/logo.png" alt="logo" style="margin-top: -5px; width: 100px;"/></a>
+    <div style="float: right">
+      <a class="nav_item">help</a>
+      <a class="nav_item">sign-out</a>
+      <div style="float: right">
+        <div id="dropbtn">
+          <button class="dropdown" onclick="hideOnClickOutside('dropmenu', 'dropbtn')"><img class="dropdown_img" src="img/user.png" alt="user" style="width: 27px; padding: 0;"/></button>
+          <div id="dropmenu" class="dropdown_content" style="display: none">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Nav bar divider -->
+  <div id="divider"></div>
+  <!-- The courses nav bar -->
+  <div id="courses" class="navbar">
+    <a href="dashboard.html" style="margin: -5px 10px"><button class="button btn_border"><img class="home_icon" src="img/home.png"/>HOME</button></a>
+    <a href="#"><button class="button btn_filled" style="margin: -5px -20px">COSC 3P94</button></a>
+    <div style="float: right">
+      <div id="coursebtn" class="course_btn_container" onclick="hideOnClickOutside('coursemenu', 'coursebtn')">
+        <img src="img/courses.png" class="btn_course_menu" alt="menu"/>
+        <div class="course_menu_overlay">
+          <a href="#">
+            <img src="img/courses_green.png" class="btn_course_menu_green" alt="menu"/>
+          </a>
+        </div>
+        <div id="coursemenu" class="course_menu_content" style="display: none">
+          <p class="course_menu_item">You are not enrolled in any other courses.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- The page body-->
+  <div id="page_body">
+    <!-- The services nav bar -->
+    <div class="services column"> 
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="about.html"><img src="img/about.png" class="service_item" alt="about"/></a>
+          <div class="service_label">
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="announcements.html"><img src="img/announcements.png" class="service_item" alt="announcements"/></a>
+          <div class="service_label">
+            <a href="#">Announcements</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="resources.html"><img src="img/resources.png" class="service_item" alt="resources"/></a>
+          <div class="service_label">
+            <a href="#">Resources</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg active_bkg">
+        <div class="service_container">
+          <a href="#"><img src="img/to-do.png" class="service_item active_service" alt="to-do"/></a>
+          <div class="service_label">
+            <a href="#">To-do</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="gradebook.html"><img src="img/gradebook.png" class="service_item" alt="gradebook"/></a>
+          <div class="service_label">
+            <a href="#">Gradebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="service_item_bkg">
+        <div class="service_container">
+          <a href="forums.html"><img src="img/forums.png" class="service_item" alt="forums"/></a>
+          <div class="service_label">
+            <a href="#">Forums</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- The main display -->
+    <div class="display column">
+      <p class="page_title">To-Do</p>      
+      <div id="divider" style="background-color: #67C781;"></div>  
+      <div>
+        <div class="todo_buttons">
+          <div class="column">
+            <button class="button btn_border_2" style="padding: 4px 15px" onclick="sortBy('date')">Sort by Date</button>
+          </div>
+          <div class="column" style="margin-left: 10px;">
+            <button class="button btn_border_2" style="padding: 4px 15px" onclick="sortBy('type')">Sort by Type</button>
+          </div>
+        </div>
+        <div id="table1" style="display: block;">
+          <table style="margin-top: 10px;">
+            <tr>
+              <th style="padding: 8px">Title</th>
+              <th style="padding: 8px">Type</th>
+              <th style="padding: 8px">Open Date</th>
+              <th style="padding: 8px">Due Date</th>
+              <th style="padding: 8px; width: 200px">Status</th>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Quiz 3: Chapter 5</a></b></strong></td>
+              <td>Quiz</td>
+              <td>Mar 01, 2020 @3:59pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Mar 29, 2020 @5:00pm</strong></td>
+              <td><span class="dot"></span>Not yet completed</td>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Quiz 2: Chapter 2</a></b></strong></td>
+              <td>Quiz</td>
+              <td>Mar 01, 2020 @3:59pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Mar 13, 2020 @5:00pm</strong></td>
+              <td><span class="dot" style="background-color: #67C781;"></span>Completed</td>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Assignment 1: Chapter 1</a></b></strong></td>
+              <td>Assignment</td>
+              <td>Mar 10, 2020 @1:00pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Mar 6, 2020 @11:59pm</strong></td>
+              <td><span class="dot" style="background-color: #67C781;"></span>Completed</td>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Quiz 1: Chapter 1</a></b></strong></td>
+              <td>Quiz</td>
+              <td>Feb 18, 2020 @12:12pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Feb 25, 2020 @5:00pm</strong></td>
+              <td><span class="dot" style="background-color: #67C781;"></span>Completed</td>
+            </tr>
+          </table>
+        </div>
+        <!-- The table sorted by Type-->
+        <div id="table2" style="display: none;">
+          <table style="margin-top: 10px;">
+            <tr>
+              <th style="padding: 8px">Title</th>
+              <th style="padding: 8px">Type</th>
+              <th style="padding: 8px">Open Date</th>
+              <th style="padding: 8px">Due Date</th>
+              <th style="padding: 8px; width: 200px">Status</th>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Assignment 1: Chapter 1</a></b></strong></td>
+              <td>Assignment</td>
+              <td>Mar 10, 2020 @1:00pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Mar 6, 2020 @11:59pm</strong></td>
+              <td><span class="dot" style="background-color: #67C781;"></span>Completed</td>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Quiz 1: Chapter 1</a></b></strong></td>
+              <td>Quiz</td>
+              <td>Feb 18, 2020 @12:12pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Feb 25, 2020 @5:00pm</strong></td>
+              <td><span class="dot" style="background-color: #67C781;"></span>Completed</td>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Quiz 2: Chapter 2</a></b></strong></td>
+              <td>Quiz</td>
+              <td>Mar 01, 2020 @3:59pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Mar 13, 2020 @5:00pm</strong></td>
+              <td><span class="dot" style="background-color: #67C781;"></span>Completed</td>
+            </tr>
+            <tr>
+              <td><strong><b><a href="#" class="assign_link">Quiz 3: Chapter 5</a></b></strong></td>
+              <td>Quiz</td>
+              <td>Mar 01, 2020 @3:59pm</td>
+              <td style="color: rgb(105, 170, 122)"><strong>Mar 29, 2020 @5:00pm</strong></td>
+              <td><span class="dot"></span>Not yet completed</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- The footer -->
+  <div id="divider" style="width: 90%; margin: auto; margin-top: 31px;"></div>
+  <div id="footer">
+    Katie Lee, Wenjie Lin, Mutaz Fattal, Kushal Baral - COSC 3P94 - Stage 2
+  </div>
+  </body>
+</html>
