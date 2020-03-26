@@ -53,6 +53,7 @@ body {
     overflow: hidden;
     border: 0;
     padding: 0;
+    background-color: rgba(255, 255, 255, 0);
 }
 .dropdown_img:hover {
     opacity: 0.8;
