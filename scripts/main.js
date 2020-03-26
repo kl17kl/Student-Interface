@@ -98,4 +98,20 @@ function view_graded() {
 function showPopup(x) {
     var popup = document.getElementById(x);
     popup.classList.toggle("show");
-  }
+}
+
+// This function toggles between sorted by date and sorted by type for the to-do page
+function sortBy(x) {
+    var date = document.getElementById("table1");
+    var type = document.getElementById("table2");
+
+    if ( x == "date") {
+        date.style.display = "block";
+        type.style.display = "none";
+    }
+    if (x == "type") {
+        type.style.display = "block";
+        date.style.display = "none";
+
+    }
+}
